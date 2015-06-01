@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+    <h2>
+      <a href= <%= "/posts/#{@post.id}" %> class="link"><%= @post.title%>
+      </a>
+    </h2>
+    <h3> User: <%= @post.user %> </h3>
+  </div>
+  <div class="row">
+    <p class="body"> <%= @post.body %> </p>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <p class="tags">
+      Tags:
+    <% @post.tags.each_with_index do |tag, index| %>
+      <a href="/tags/<%= tag.id %>">
+        <% if index == @post.tags.size - 1 %>
+          <%= tag.name %>
+        <% else %>
+          <%= tag.name %>,
+        <% end %>
+      </a>
+    <% end %>
+    </p>
+
+  </div>
+</div>

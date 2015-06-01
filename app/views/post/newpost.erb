@@ -1,0 +1,30 @@
+<%= erb :_header %>
+
+<div class="container">
+  <h1> New Post </h1>
+  <br>
+
+  <form action="/newpost" method="post">
+    <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input type="text" class="form-control" id="inputTitle" placeholder="Title" name="post[title]">
+    </div>
+    <div class="form-group">
+        <label for="inputBody">Body</label>
+        <textarea class="form-control" id="inputBody" placeholder="Body" rows = "8" name = "post[body]"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputTitle">User</label>
+        <input type="user" class="form-control" id="inputTitle" placeholder="Name" name = "post[user]">
+    </div>
+    <div class="form-group">
+        <label for="inputTags">Tags</label>
+        <input type="Tags" class="form-control" id="inputTags" placeholder="happy, sad, angry" name = "post[tags]">
+    </div>
+
+    <button type="submit" class="btn btn-primary pull-right">Submit</button>
+</form>
+
+
+
+</div>

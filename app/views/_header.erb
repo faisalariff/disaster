@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="/"><button class="btn btn-custom navbar-btn" type="button">Home</button></a>
+    </div>
+    <p class="navbar-text navbar-collapse">Welcome to Pinstabook!</p>
+    <a href="/newpost"><button class="navbar-right btn btn-custom navbar-btn" type="button">New Post</button></a>
+    <p class="navbar-right navbar-text navbar-collapse"></p>
+    <% if @postpage %>
+      <a href="/edit/<%= @post.id %>"><button class="navbar-right btn btn-warning navbar-btn" type="button">Edit</button></a>
+      <p class="navbar-right navbar-text navbar-collapse"></p>
+      <form action="/post/<%= @post.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="navbar-right btn btn-danger navbar-btn" value="submit">Delete</button>
+      </form>
+    <% end %>
+  </div>
+</nav>

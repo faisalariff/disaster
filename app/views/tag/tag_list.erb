@@ -1,0 +1,19 @@
+<%= erb :_header %>
+
+<div class="container">
+
+  <h1> Tags </h1>
+
+  <% if @tags %>
+    <% @tags.each do |tag| %>
+    <div class="row">
+      <p>
+        <a href= <%= "/tags/#{tag.id}" %> >
+          <%= tag.name %>
+        </a>
+      </p>
+    </div>
+    <% end %>
+  <% end %>
+
+</div>

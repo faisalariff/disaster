@@ -1,0 +1,38 @@
+<%= erb :_header %>
+
+<div class="container">
+  <h1> Posts tagged <%= @tag_name %> </h2>
+
+
+  <% @posts.reverse_each do |post| %>
+
+  <div class="row">
+    <h2>
+      <a href= <%= "/posts/#{post.id}" %> class="link">
+        <%= post.title[0..10]%><%= "..." if post.title.length > 10 %>
+      </a>
+    </h2>
+    <h3> Author: <%= post.author %> </h3>
+  </div>
+  <div class="row">
+    <p class="body"> <%= post.body[0..100] %> </p>
+  </div>
+  <div class="row">
+    <p class="tags">
+      Tags:
+    <% post.tags.each_with_index do |tag, index| %>
+      <a href="/tags/<%= tag.id %>">
+        <% if index == post.tags.size - 1 %>
+          <%= tag.name %>
+        <% else %>
+          <%= tag.name %>,
+        <% end %>
+      </a>
+    <% end %>
+    </p>
+  </div>
+
+  <hr>
+  <% end %>
+
+</div>
